@@ -3,8 +3,8 @@ from rest_framework import viewsets, permissions
 from .models import AuditLog
 from .serializers import AuditLogSerializer
 
-class AuditLogViewSet(viewsets.ModelViewSet):
-    serializers = AuditLogSerializer
-    permission_classes = [permissions.IsAdminUser]
 
+class AuditLogViewSet(viewsets.ModelViewSet):
     queryset = AuditLog.objects.all()
+    serializer_class = AuditLogSerializer
+    permission_classes = [permissions.IsAuthenticated]

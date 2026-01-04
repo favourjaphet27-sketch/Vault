@@ -3,5 +3,7 @@ from .models import AuditLog
 
 
 class AuditLogSerializer(serializers.ModelSerializer):
-    model = AuditLog
-    fields = "__all__"
+
+    class Meta:
+        model = AuditLog
+        fields = "__all__"
